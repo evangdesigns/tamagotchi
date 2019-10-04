@@ -1,3 +1,78 @@
+$primaryColor: #231f20;
+$global-padding:10px;
+$global-margin: 20px;
+$global-border-radius: 10px;
+$globalBorder: 4px solid $primaryColor;
 body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color:#cccccc;
+    margin: 0;
+  }
+h1 {
+  font-size:40px;
+  text-align:center;
+  }
+#app {
+  display: flex;
+  flex-wrap: wrap;
+}
+.quad {
+  height: 50vh;
+  width: 50vw;
+  border: $globalBorder;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  padding: $global-padding;
+}
+.selection {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  padding: $global-padding;
+  margin: $global-margin;
+}
+button {
+  height: 70px;
+  width: 70px;
+  background-color: $primaryColor;
+  border: none;
+  color: white;
+  padding:$global-padding;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: $global-border-radius;
+  margin: $global-margin;
+  &:hover {
     background-color:#cccccc;
   }
+    
+}
+
+i.fas {
+  color:#fff;
+}
+#meter { 
+	height: 30px;
+	position: relative;
+	background: #555;
+  border:$globalBorder;
+  p {
+    align-content: center;
+    text-align:center;
+    color:#fff;
+    margin:0;
+    position: fixed;
+    z-index: 999;
+  }
+  span {
+    display: block;
+    height: 100%;
+    background-color: $primaryColor;
+    position: relative;
+    overflow: hidden;
+      
+  }
+}
