@@ -1,4 +1,7 @@
 $primaryColor: #231f20;
+$hoverColor: #000000;
+$white:white;
+$gray:gray;
 $global-padding:10px;
 $global-margin: 20px;
 $global-border-radius: 10px;
@@ -37,7 +40,7 @@ button {
   width: 70px;
   background-color: $primaryColor;
   border: none;
-  color: white;
+  color: $white;
   padding:$global-padding;
   text-align: center;
   text-decoration: none;
@@ -46,25 +49,22 @@ button {
   border-radius: $global-border-radius;
   margin: $global-margin;
   &:hover {
-    background-color:#cccccc;
+    background-color:$hoverColor;
+    color:$gray;
   }
     
 }
 
-i.fas {
-  color:#fff;
-}
-#meter { 
+.meter { 
 	height: 30px;
 	position: relative;
-	background: #555;
-  border:$globalBorder;
+  background:$gray;
   p {
-    align-content: center;
-    text-align:center;
-    color:#fff;
+    color:$white;
     margin:0;
-    position: fixed;
+    position: absolute;
+    top:3px;
+    left: 48%;
     z-index: 999;
   }
   span {
