@@ -34,7 +34,7 @@ const printEat = () => {
   </div>
   <div class="meter">
     <p>${full}%</p>
-    <span id="full"></span>
+    <span id="fullMeter"></span>
   </div>
   `;
   utilities.printToDom('eat', domString);
@@ -43,10 +43,11 @@ const printEat = () => {
 const adjustMeter = (e) => {
   if (e.target.id === 'burger') {
     full += foods[0].points;
+    printEat();
   } else if (e.target.id === 'pizza') {
     full += foods[1].points;
+    printEat();
   }
-  console.log(full);
 };
 
 const eatListener = () => {
