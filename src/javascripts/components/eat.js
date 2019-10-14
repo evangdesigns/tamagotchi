@@ -34,27 +34,27 @@ const printEat = () => {
   </div>
   <div class="meter">
     <p>${full}%</p>
-    <span id="full" style="width:50%"></span>
+    <span id="full"></span>
   </div>
   `;
   utilities.printToDom('eat', domString);
 };
 
 const adjustMeter = (e) => {
-  if (e === 'burger') {
+  if (e.target.id === 'burger') {
     full += foods[0].points;
-  } else if (e === 'pizza') {
+  } else if (e.target.id === 'pizza') {
     full += foods[1].points;
   }
   console.log(full);
 };
 
 const eatListener = () => {
-  document.getElementById('burger').addEventListener('click', () => {
-    adjustMeter();
+  document.getElementById('burger').addEventListener('click', (e) => {
+    adjustMeter(e);
   });
-  document.getElementById('pizza').addEventListener('click', () => {
-    adjustMeter();
+  document.getElementById('pizza').addEventListener('click', (e) => {
+    adjustMeter(e);
   });
 };
 
