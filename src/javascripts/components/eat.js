@@ -1,39 +1,61 @@
-// import utilities from '../helpers/utilities';
+import utilities from '../helpers/utilities';
 
-// const foods = [
-//   { id: 'food1', name: 'burger', points: -3 },
-//   { id: 'food2', name: 'steak', points: 10 },
-//   { id: 'food3', name: 'salad', points: 10 },
-//   { id: 'food4', name: 'taco', points: -3 },
-// ];
+const foods = [
+  {
+    id: 'food1',
+    name: 'burger',
+    points: -3,
+    icon: 'fas fa-hamburger',
+  },
+  {
+    id: 'food2',
+    name: 'pizza',
+    points: 10,
+    icon: 'fas fa-pizza-slice',
+  },
+];
 
-// const getSelectedFoods = () => {
-//   // get all cheese checkboxes
-//   const selectedFood = [];
-//   // keep the checked foods
-//   const cheeseCheckbox = document.getElementsByClassName('cheese');
-//   for (let j = 0; j < cheeseCheckbox.length; j += 1) {
-//     for (let k = 0; k < foods.length; k += 1) {
-//       if (cheeseCheckbox[j].checked && cheeseCheckbox[j].id === foods[k].id) {
-//         selectedfoods.push(foods[k]);
-//       }
-//     }
-//   }
+let full = 50;
 
-//   return selectedfoods;
-// };
+const printEat = () => {
+  let domString = '';
+  domString += `
+    <h1>EAT</h1>
+      <div class="selection">
+  `;
+  for (let i = 0; i < foods.length; i += 1) {
+    domString += `
+    <button id="${foods[i].name}" class="icon">
+      <i id="${foods[i].id}" class="${foods[i].icon}"></i>
+    </button>
+    `;
+  }
+  domString += `
+  </div>
+  <div class="meter">
+    <p>${full}%</p>
+    <span id="full" style="width:50%"></span>
+  </div>
+  `;
+  utilities.printToDom('eat', domString);
+};
 
-// const printEat = () => {
-//   let domString = '';
-//   for (let i = 0; i < foods.length; i + 1) {
-//     domString += `
-//     <div class='form-group form-check'>
-//         <input type='checkbox' class='cheese form-check-input' id='${foods[i].id}'>
-//         <label class='form-check-label' for='${foods[i].id}'>${foods[i].name}</label>
-//     </div>
-//   `;
-//   }
-//   utilities.printToDom('cheeseCounter', domString);
-// };
+const adjustMeter = (e) => {
+  if (e === 'burger') {
+    full += foods[0].points;
+  } else if (e === 'pizza') {
+    full += foods[1].points;
+  }
+  console.log(full);
+};
 
-// export default { printEat, getSelectedFood };
+const eatListener = () => {
+  document.getElementById('burger').addEventListener('click', () => {
+    adjustMeter();
+  });
+  document.getElementById('pizza').addEventListener('click', () => {
+    adjustMeter();
+  });
+};
+
+export default { printEat, eatListener };
