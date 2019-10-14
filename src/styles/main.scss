@@ -73,6 +73,8 @@ button {
     background-color: $primaryColor;
     position: relative;
     overflow: hidden;
-    width:18%;
+  }
+  #fullMeter {
+    width: 50%;
   }
 }
