@@ -17,6 +17,14 @@ const foods = [
 
 let full = 50;
 
+const meterCheck = () => {
+  if (full >= 100) {
+    full = 100;
+  } if (full <= 0) {
+    full = 0;
+  }
+};
+
 const printEat = () => {
   let domString = '';
   domString += `
@@ -25,8 +33,8 @@ const printEat = () => {
   `;
   for (let i = 0; i < foods.length; i += 1) {
     domString += `
-    <button id="${foods[i].name}" class="icon">
-      <i id="${foods[i].id}" class="${foods[i].icon}"></i>
+    <button type="button" id="${foods[i].name}">
+      <i id="${foods[i].id}" class="icon ${foods[i].icon}"></i>
     </button>
     `;
   }
@@ -38,16 +46,19 @@ const printEat = () => {
   </div>
   `;
   utilities.printToDom('eat', domString);
+  // eslint-disable-next-line no-use-before-define
+  eatListener();
 };
 
 const adjustMeter = (e) => {
   if (e.target.id === 'burger') {
     full += foods[0].points;
-    printEat();
   } else if (e.target.id === 'pizza') {
     full += foods[1].points;
-    printEat();
   }
+  meterCheck();
+  printEat();
+  document.getElementById('fullMeter').style.width = `${full}%`;
 };
 
 const eatListener = () => {
@@ -59,4 +70,4 @@ const eatListener = () => {
   });
 };
 
-export default { printEat, eatListener };
+export default { printEat };

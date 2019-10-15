@@ -35,6 +35,9 @@ h1 {
   padding: $global-padding;
   margin: $global-margin;
 }
+.icon{
+  pointer-events:none;
+}
 button {
   height: 70px;
   width: 70px;
