@@ -1,7 +1,7 @@
 import '../styles/main.scss';
 import '@fortawesome/fontawesome-free/js/all';
 import eat from './components/eat';
-import play from './components/play'
+import play from './components/play';
 
 const init = () => {
   eat.printEat();

@@ -3,25 +3,25 @@ import utilities from '../helpers/utilities';
 const activities = [
   {
     id: 'activity1',
-    name: 'burger',
-    points: -3,
-    icon: 'fas fa-hamburger',
+    name: 'sking',
+    points: 50,
+    icon: 'fas fa-skiing',
   },
   {
     id: 'activity2',
-    name: 'pizza',
-    points: 10,
-    icon: 'fas fa-pizza-slice',
+    name: 'chess',
+    points: 2,
+    icon: 'fas fa-chess',
   },
 ];
 
-let full = 50;
+let fun = 50;
 
 const meterCheck = () => {
-  if (full >= 100) {
-    full = 100;
-  } if (full <= 0) {
-    full = 0;
+  if (fun >= 100) {
+    fun = 100;
+  } if (fun <= 0) {
+    fun = 0;
   }
 };
 
@@ -41,8 +41,8 @@ const printPlay = () => {
   domString += `
   </div>
   <div class="meter">
-    <p>${full}%</p>
-    <span id="fullMeter"></span>
+    <p>${fun}%</p>
+    <span id="funMeter"></span>
   </div>
   `;
   utilities.printToDom('play', domString);
@@ -50,22 +50,26 @@ const printPlay = () => {
   playListener();
 };
 
+// playDegridator = () => {
+//   setInterval(fun -= 2, 3000);
+//   printPlay();
+// };
 const adjustMeter = (e) => {
-  if (e.target.id === 'burger') {
-    full += activities[0].points;
-  } else if (e.target.id === 'pizza') {
-    full += activities[1].points;
+  if (e.target.id === 'sking') {
+    fun += activities[0].points;
+  } else if (e.target.id === 'chess') {
+    fun += activities[1].points;
   }
   meterCheck();
   printPlay();
-  document.getElementById('fullMeter').style.width = `${full}%`;
+  document.getElementById('funMeter').style.width = `${fun}%`;
 };
 
 const playListener = () => {
-  document.getElementById('burger').addEventListener('click', (e) => {
+  document.getElementById('sking').addEventListener('click', (e) => {
     adjustMeter(e);
   });
-  document.getElementById('pizza').addEventListener('click', (e) => {
+  document.getElementById('chess').addEventListener('click', (e) => {
     adjustMeter(e);
   });
 };
