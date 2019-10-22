@@ -28,7 +28,7 @@ const meterCheck = () => {
 const printFight = () => {
   let domString = '';
   domString += `
-    <h1>Fight</h1>
+    <h1>FIGHT</h1>
       <div class="selection">
   `;
   actions.forEach((action) => {
