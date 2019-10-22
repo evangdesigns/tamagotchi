@@ -28,7 +28,7 @@ const meterCheck = () => {
 const printPlay = () => {
   let domString = '';
   domString += `
-    <h1>Play</h1>
+    <h1>PLAY</h1>
       <div class="selection">
   `;
   for (let i = 0; i < activities.length; i += 1) {
