@@ -9,8 +9,7 @@
 * Webpack
 
 ## Screenshots
-Display on page load:
-![Tamogotchi] https://github.com/evangdesigns/tamagotchi/blob/master/src/assets/images/Screen%20Shot%202019-10-24%20at%208.50.16%20PM.png?raw=true)
+![Tamogotchi](https://github.com/evangdesigns/tamagotchi/blob/master/src/assets/images/Screen%20Shot%202019-10-24%20at%208.50.16%20PM.png?raw=true)
 
 
 ## Instructions for how to run the project
