@@ -1,6 +1,7 @@
 # Tamagotchi
 
 ## Description
+The classic key chain from the 90s is now in your browser! Kepp your pet alive by feeding, playing, fighting, and sleeping.
 
 ## Technologies Used
 
