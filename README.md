@@ -20,5 +20,8 @@ The classic key chain from the 90s is now in your browser! Kepp your pet alive b
 * At the root of this project, run the following command: `hs -p 8080`.
 * In your browser, navigate to `https://localhost:8080`;
 
+## Demo
+Preview it here: [Tamagotchi](https://tamagotchi-fb7a8.firebaseapp.com)
+
 ## Contributors
 * [Evan Grabenstein](https://github.com/evangdesigns)
